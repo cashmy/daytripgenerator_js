@@ -34,3 +34,5 @@ function displayDayTripResults(someArray) {
 
 let dayTripResults = initialSelection();
 displayDayTripResults(dayTripResults);
+
+// Now check for changes
