@@ -32,7 +32,48 @@ function displayDayTripResults(someArray) {
     console.log(resultString)
 }
 
+// ----- Check for changes -----
+// Because each array can have a variation in length. I choose to be simple (and somewhat repetitive) with this section
+// Later refactoring can be examined for a more streamlined (looping process) [when those concepts are introduced]
+function checkForChanges(someArray) {
+    let changeRequest = prompt("Do you wish to make changes? (y/n)");
+    if (changeRequest === 'y') {
+        // Destination
+        let answer = prompt("Do you wish to change " + someArray[0] + "?")
+        if (answer === 'y') {
+            someArray[0] = rndArrayElemSelector(destinationArray, destinationArray.length);
+        }
+        // Transportation
+        answer = prompt("Do you wish to change " + someArray[1] + "?")
+        if (answer === 'y') {
+            someArray[1] = rndArrayElemSelector(transportationArray, transportationArray.length);
+        }
+        // Restaurant Dining
+        let answer = prompt("Do you wish to change " + someArray[0] + "?")
+        if (answer === 'y') {
+            someArray[2] = rndArrayElemSelector(restaurantArray, restaurantArray.length);
+        }
+        // Entertainment
+        answer = prompt("Do you wish to change " + someArray[1] + "?")
+        if (answer === 'y') {
+            someArray[3] = rndArrayElemSelector(entertainmentArray, entertainmentArray.length);
+        }
+
+    } else {
+        console.log("\nEnjoy your Trip!");
+        return false;
+    }
+}
+
+// ----- Cycle through change requests until user is satisfied -----
+function cycleCheckRequest(someArray) {
+    let changeNeeded = true;
+    while (changeNeeded) {
+        changeNeeded = checkForChanges(someArray);
+        displayDayTripResults(someArray);
+    }
+}
+
 let dayTripResults = initialSelection();
 displayDayTripResults(dayTripResults);
-
-// Now check for changes
+cycleCheckRequest(dayTripResults);
