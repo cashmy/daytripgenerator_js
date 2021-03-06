@@ -58,7 +58,7 @@ function checkForChanges(someArray) {
         if (answer === 'y') {
             someArray[3] = rndArrayElemSelector(entertainmentArray, entertainmentArray.length);
         }
-
+        return true;
     } else {
         console.log("\nEnjoy your Trip!");
         return false;
