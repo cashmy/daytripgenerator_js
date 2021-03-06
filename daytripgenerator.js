@@ -39,22 +39,22 @@ function checkForChanges(someArray) {
     let changeRequest = prompt("Do you wish to make changes? (y/n)");
     if (changeRequest === 'y') {
         // Destination
-        let answer = prompt("Do you wish to change " + someArray[0] + "?")
+        let answer = prompt("Do you wish to change " + someArray[0] + "? (y/n)")
         if (answer === 'y') {
             someArray[0] = rndArrayElemSelector(destinationArray, destinationArray.length);
         }
         // Transportation
-        answer = prompt("Do you wish to change " + someArray[1] + "?")
+        answer = prompt("Do you wish to change " + someArray[1] + "? (y/n)")
         if (answer === 'y') {
             someArray[1] = rndArrayElemSelector(transportationArray, transportationArray.length);
         }
         // Restaurant Dining
-        let answer = prompt("Do you wish to change " + someArray[0] + "?")
+        answer = prompt("Do you wish to change " + someArray[2] + "? (y/n)")
         if (answer === 'y') {
             someArray[2] = rndArrayElemSelector(restaurantArray, restaurantArray.length);
         }
         // Entertainment
-        answer = prompt("Do you wish to change " + someArray[1] + "?")
+        answer = prompt("Do you wish to change " + someArray[3] + "? (y/n)")
         if (answer === 'y') {
             someArray[3] = rndArrayElemSelector(entertainmentArray, entertainmentArray.length);
         }
